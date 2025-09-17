@@ -32,6 +32,15 @@
 </template>
 
 <style>
+html, body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(253, 187, 45, 0.87) 53%);
+}
 footer{
   position: fixed;
   bottom: 0;
