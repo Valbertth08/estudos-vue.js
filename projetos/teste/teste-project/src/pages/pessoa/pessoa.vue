@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <v-main>
-      <v-container> 
-       <v-row> 
-         <CardPessoa v-for="pessoa in list" :key="pessoa.nome" :nome="pessoa.nome" :idade="pessoa.idade" @descricao="exibirNome"></CardPessoa>
+      <v-container>
+       <v-row>
+        <cardPessoa v-for="pessoa in list" :key="pessoa.nome" :nome="pessoa.nome" :idade="pessoa.idade" @descricao="exibirNome"> </cardPessoa>
         <h1>{{ nomeTitle }} </h1>
        </v-row>
       </v-container>
@@ -12,6 +12,7 @@
 </template>
 
 <script setup>
+import cardPessoa from './components/cardPessoa.vue';
 import { onMounted, reactive, ref } from 'vue';
 let list = reactive([])
 

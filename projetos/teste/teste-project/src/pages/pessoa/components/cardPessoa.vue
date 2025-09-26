@@ -14,7 +14,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-</template> 
+</template>
 
 <script setup>
  defineProps(["nome","idade"])

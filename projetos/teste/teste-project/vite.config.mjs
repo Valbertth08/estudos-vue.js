@@ -8,10 +8,12 @@ import VueRouter from 'unplugin-vue-router/vite'
 // Utilities
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
+import { devtools } from 'vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    devtools,
     VueRouter(),
     Vue({
       template: { transformAssetUrls },
