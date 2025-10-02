@@ -19,7 +19,9 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     '/home/home': RouteRecordInfo<'/home/home', '/home/home', Record<never, never>, Record<never, never>>,
-    '/pessoa/components/cardPessoa': RouteRecordInfo<'/pessoa/components/cardPessoa', '/pessoa/components/cardPessoa', Record<never, never>, Record<never, never>>,
+    '/pessoa/components/atualizarPessoa': RouteRecordInfo<'/pessoa/components/atualizarPessoa', '/pessoa/components/atualizarPessoa', Record<never, never>, Record<never, never>>,
+    '/pessoa/components/cadastrarPessoa': RouteRecordInfo<'/pessoa/components/cadastrarPessoa', '/pessoa/components/cadastrarPessoa', Record<never, never>, Record<never, never>>,
+    '/pessoa/components/listarPessoas': RouteRecordInfo<'/pessoa/components/listarPessoas', '/pessoa/components/listarPessoas', Record<never, never>, Record<never, never>>,
     '/pessoa/pessoa': RouteRecordInfo<'/pessoa/pessoa', '/pessoa/pessoa', Record<never, never>, Record<never, never>>,
   }
 
@@ -38,8 +40,16 @@ declare module 'vue-router/auto-routes' {
       routes: '/home/home'
       views: never
     }
-    'src/pages/pessoa/components/cardPessoa.vue': {
-      routes: '/pessoa/components/cardPessoa'
+    'src/pages/pessoa/components/atualizarPessoa.vue': {
+      routes: '/pessoa/components/atualizarPessoa'
+      views: never
+    }
+    'src/pages/pessoa/components/cadastrarPessoa.vue': {
+      routes: '/pessoa/components/cadastrarPessoa'
+      views: never
+    }
+    'src/pages/pessoa/components/listarPessoas.vue': {
+      routes: '/pessoa/components/listarPessoas'
       views: never
     }
     'src/pages/pessoa/pessoa.vue': {

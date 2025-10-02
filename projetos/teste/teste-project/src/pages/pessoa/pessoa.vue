@@ -2,31 +2,34 @@
   <v-app>
     <v-main>
       <v-container>
-       <v-row>
-        <cardPessoa v-for="pessoa in list" :key="pessoa.nome" :nome="pessoa.nome" :idade="pessoa.idade" @descricao="exibirNome"> </cardPessoa>
-        <h1>{{ nomeTitle }} </h1>
-       </v-row>
+        <listar-pessoas :items="pessoas" @adicionarPessoa="adicionarPessoa"> </listar-pessoas>
       </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script setup>
-import cardPessoa from './components/cardPessoa.vue';
-import { onMounted, reactive, ref } from 'vue';
-let list = reactive([])
+import { onMounted, reactive, ref} from 'vue';
+import listarPessoas from './components/listarPessoas.vue';
+import PessoaService from '@/domain/services/PessoaService';
 
-let nomeTitle= ref();
 
-const exibirNome=(nome)=>{
-  nomeTitle.value=nome;
+const pessoas = ref([])
+
+
+const listaDePessoas = async () => {
+  try{
+    const response = await PessoaService.buscarPessoas();
+    console.log("chegou", response)
+    pessoas.value = response.data;
+  }catch(error){
+    console.error("Erro ao buscar as pessoas", error);
+  }
+    console.log("chegou", pessoas)
 }
 
 onMounted(() => {
-  list.push(
-    { nome: "jose", idade: 12 },
-    { nome: "joao", idade: 33 },
-    { nome: "fabio", idade: 55 }
-  )
-})
+  listaDePessoas();
+});
+
 </script>
