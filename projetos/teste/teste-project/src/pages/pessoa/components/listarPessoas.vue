@@ -20,16 +20,16 @@
     <br>
     <br>
     <v-btn color="primary" @click="ModalCadastrar">Cadastrar Pessoa</v-btn>
-    <CadastrarPessoa v-model:mostrarModalCadastrar="mostrarModalCadastrar" @cadastrarPessoa="atualizarLista" />
+    <CadastrarPessoa v-model:mostrarModalCadastrar="mostrarModalCadastrar" @cadastrarPessoa="atualizarListaCadastro" />
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import CadastrarPessoa from './cadastrarPessoa.vue';
-import atualizarPessoa from './atualizarPessoa.vue';
+import atualizarPessoa from './editarPessoa.vue';
 
 const props = defineProps(['items'])
-const emits = defineEmits(['adicionarPessoa'])
+const emits = defineEmits(['atualizarListaCadastro'])
 
 const  mostrarModalCadastrar = ref();
 const  mostrarModalAtualizarItem = ref();
@@ -48,9 +48,8 @@ function ModalCadastrar(){
 function editarItem(){
  mostrarModalAtualizarItem.value=true;
 }
-function atualizarLista(item){
-    console.log('chegou',item)
-    emits('adicionarPessoa',item)
+function atualizarListaCadastro(){
+    emits('atualizarListaCadastro')
 }
 
 </script>

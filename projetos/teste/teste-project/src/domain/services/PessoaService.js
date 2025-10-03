@@ -7,6 +7,10 @@ class PessoaService{
   buscarPessoas() {
    return axios.get(url + "/pessoa");
   };
+  
+  cadastrarPessoa(item) {
+   return axios.post(url + "/pessoa",item);
+  };
 
 }
 

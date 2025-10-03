@@ -14,12 +14,6 @@
           outlined
           v-model="item.nome"
         />
-        <v-text-field
-          label="Idade"
-          required
-          outlined
-          v-model="item.idade"
-        />
       </v-card-text>
       <v-card-actions>
         <v-spacer />
@@ -31,11 +25,11 @@
 </template>
 
 <script setup>
+import PessoaService from '@/domain/services/PessoaService'
 import { ref } from 'vue'
 
 const item = ref({
     nome: '',
-    idade: '',
 })
 
 const emits = defineEmits(['cadastrarPessoa'])
@@ -47,9 +41,12 @@ function cadastrarPessoa(){
 
   const novoItem = {...item.value }
 
-  emits('cadastrarPessoa', novoItem)
+ const response =  PessoaService.cadastrarPessoa(novoItem);
+ console.log("resposta",response.data)
 
-  item.value = { nome: '', idade: '' }
+  emits('cadastrarPessoa')
+
+  item.value = { nome: ''}
   
   mostrarModalCadastrar.value = false
 }
