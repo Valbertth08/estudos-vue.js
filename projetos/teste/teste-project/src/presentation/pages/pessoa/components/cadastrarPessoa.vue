@@ -25,7 +25,6 @@
 </template>
 
 <script setup>
-import PessoaService from '@/domain/services/PessoaService'
 import { ref } from 'vue'
 
 const item = ref({
@@ -40,9 +39,6 @@ const mostrarModalCadastrar = defineModel('mostrarModalCadastrar')
 function cadastrarPessoa(){
 
   const novoItem = {...item.value }
-
- const response =  PessoaService.cadastrarPessoa(novoItem);
- console.log("resposta",response.data)
 
   emits('cadastrarPessoa')
 

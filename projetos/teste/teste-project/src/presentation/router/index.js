@@ -1,6 +1,6 @@
-import Pessoa from '@/pages/pessoa/pessoa.vue'
-import Home from'@/pages/home/home.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../pages/home/home.vue'
+import Pessoa from '../pages/pessoa/pessoa.vue'
 
 const routes = [
   {
